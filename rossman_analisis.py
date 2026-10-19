@@ -72,6 +72,7 @@ plt.grid(True, linestyle='--', alpha=0.5) # Cuadrícula de fondo opcional
 plt.legend(title='Año')
 
 plt.tight_layout()
+plt.savefig('./images/ventas_mensuales_por_año.png', dpi=300)  # Guardar la figura en alta resolución
 plt.show()
 
 store_per_year = data_limpio.groupby(['Year','Month'])['Sales'].mean()
@@ -141,6 +142,7 @@ plt.ylim(0, growth.max() * 1.15)
 
 plt.legend(loc='upper left')
 plt.tight_layout()
+plt.savefig('./images/comparacion_ventas_año_por_año.png', dpi=300)
 plt.show()
 
 sales_promo = data_limpio.groupby('Promo')['Sales'].mean()
@@ -160,6 +162,7 @@ plt.xticks(
 )
 plt.legend()
 plt.tight_layout()
+plt.savefig('./images/ventas_promociones.png', dpi=300)
 plt.show()
 
 sales_holiday = data_limpio.groupby('StateHoliday')['Sales'].mean()
@@ -176,6 +179,7 @@ plt.xticks(
 )
 plt.legend()
 plt.tight_layout()
+plt.savefig('./images/ventas_feriados.png', dpi=300)
 plt.show()
 
 correlacion = data_limpio[['Customers','Sales']].corr()
@@ -190,4 +194,5 @@ formatter = ticker.FuncFormatter(lambda x, pos: f'{int(x):,}'.replace(',','.'))
 plt.gca().yaxis.set_major_formatter(formatter)
 
 plt.tight_layout()
+plt.savefig('./images/correlacion_clientes_ventas.png', dpi=300)
 plt.show()
