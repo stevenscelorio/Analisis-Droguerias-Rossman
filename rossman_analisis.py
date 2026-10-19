@@ -104,7 +104,7 @@ porcentaje_crecimiento = growth.pct_change() * 100
 
 plt.figure(figsize=(10,6))
 # Creamos el gráfico de barras
-barras = plt.bar(growth.index.astype(str),growth.values, color='blue', label='Ventas Anuales')
+barras = plt.bar(growth.index.astype(str),growth.values, color='blue', label='Ventas de los primeros 6 meses')
 plt.title('Comparación de ventas de los primeros 6 meses entre 2013 al 2015')
 plt.ylabel('Ventas')
 plt.xlabel('Años')
@@ -151,7 +151,7 @@ plt.figure(figsize=(12,6))
 
 barras4 = plt.bar(sales_promo.index.astype(str),sales_promo.values,color='skyblue',label='Relacion de ventas con las promociones')
 
-plt.title('Las promociones aumentas las ventas?')
+plt.title('Las promociones aumentan las ventas?')
 plt.ylabel('Promedio de ventas')
 plt.xlabel('Promoción y no promoción')
 #Cambiamos las etiquetas del eje x
@@ -171,7 +171,7 @@ print(sales_holiday)
 barra3 = plt.bar(sales_holiday.index.astype(str),sales_holiday.values,color='red',label='Diferencia de ventas entre feriado y no feriado')
 plt.title('Diferencia entre ventas de un dia feriado a un día normal')
 plt.ylabel('Promedio ventas por dia')
-plt.xlabel('Diasferiados y normales')
+plt.xlabel('Dias feriados y normales')
 plt.xticks(
     ticks=[0,1,2,3],
     labels=['Normal','Feriado','Pascuas','Navidad'],
@@ -188,7 +188,7 @@ plt.scatter(data_limpio['Customers'],data_limpio['Sales'],color='blue',alpha=0.3
 
 plt.title('Correlación entre clientes y ventas')
 plt.xlabel('Cantidad de clientes')
-plt.ylabel('Ventas totales')
+plt.ylabel('Ventas por tienda y dia')
 
 formatter = ticker.FuncFormatter(lambda x, pos: f'{int(x):,}'.replace(',','.'))
 plt.gca().yaxis.set_major_formatter(formatter)
